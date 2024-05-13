@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Interview Repository - React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains two main parts: a React application located in the `root` folder, and an API in the `api` folder. Below you'll find instructions on how to set up and run each part, as well as details on the structure and objectives of the React application.
 
-## Available Scripts
+## Setup
 
-In the project directory, you can run:
+### Running the API
 
-### `yarn start`
+Navigate to the /api folder:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+cd api
+yarn install
+yarn start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The API will run on `localhost:3001`. Once started, you do not need to make any further changes to the API code.
 
-### `yarn test`
+### Running the APP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+// in root folder
+yarn install
+yarn start
+```
 
-### `yarn build`
+The application will run on `localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Application Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The main application is built using React, with pre-installed libraries that are commonly used in our projects:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- react-query
+- react-hook-form
+- yup
+- styled-components
+- typescript
 
-### `yarn eject`
+## Development Objective
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Your task is to demonstrate proficiency in using styled-components to style components within the React application. Style any component you want but we recommend Input component
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Form and Validation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Create a form that includes:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- A text input (name="textField")
+- A radio group (name="radioField")
+- A checkbox (name="checkboxField")
 
-## Learn More
+#### Validation Rules
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use yup for form validation with the following schema:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- textField is required string with minimum of 4 characters
+- checkboxField is required
+- radioField one of the options must be selected
+
+### API Interaction
+
+Submit the form data to the API endpoint /api/submit-form using react-query. The endpoint URL is configured in your .env file.
+
+### Handling Responses and User Experience
+
+Display the response from the API upon form submission, which can either be an error message or a success message. Ensure you handle the user experience gracefully during loading and after the response is received.
+
+### Conclusion
+
+This setup is designed to evaluate your ability to integrate and use various technologies typical in our projects. Ensure you read through the instructions carefully and feel free to enhance the user experience and application functionality.
